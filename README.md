@@ -36,9 +36,7 @@ flowchart LR
 
 The recording shows the Android app cycling through the four server-generated widgets:
 
-<video src="Screen_recording_20261008_214417.webm" controls="controls" width="360"></video>
-
-[Open the WebM recording](Screen_recording_20261008_214417.webm)
+![Remote Compose sample cycling through the clock, weather, post-it, and reminder widgets](remote-compose-widgets.gif)
 
 ## Run
 
