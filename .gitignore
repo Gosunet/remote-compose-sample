@@ -1,4 +1,26 @@
+# Gradle caches and generated output
 .gradle/
+.kotlin/
+**/.gradle/
 **/build/
-local.properties
+
+# Android Studio and local SDK configuration
 .idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Machine-local environment and signing files
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

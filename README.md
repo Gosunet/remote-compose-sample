@@ -10,6 +10,36 @@ A small Android app and Ktor server demonstrating server-generated Remote Compos
 
 Each request to `/remote-compose` cycles through the four documents. The weather values and time are static sample data.
 
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph Runtime
+        App[Android app<br/>Button + RemoteComposePlayer]
+        Server[Ktor server<br/>GET /remote-compose]
+        Documents[Shared remote-documents module<br/>Builds four Remote Compose layouts]
+        App -->|GET request| Server
+        Server -->|Generate next document| Documents
+        Documents -->|Remote Compose bytes| Server
+        Server -->|application/octet-stream| App
+    end
+
+    subgraph Android Studio previews
+        Preview[Android app previews]
+        Player[RemoteComposePlayer]
+        Preview -->|Create sample document| Documents
+        Documents -->|Remote Compose bytes| Player
+    end
+```
+
+## Demo
+
+The recording shows the Android app cycling through the four server-generated widgets:
+
+<video src="Screen_recording_20261008_214417.webm" controls="controls" width="360"></video>
+
+[Open the WebM recording](Screen_recording_20261008_214417.webm)
+
 ## Run
 
 Use JDK 25 with Android SDK platform 37 installed. The shared document and server modules use a JDK 25 toolchain. The shared document module emits Java 17 bytecode so it remains consumable by Android's D8 compiler; the server uses the JDK 25 default bytecode target.

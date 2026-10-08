@@ -1,0 +1,31 @@
+[versions]
+agp = "9.4.1"
+android-compileSdk = "37"
+android-minSdk = "26"
+android-targetSdk = "37"
+androidx-compose-remote = "1.0.0-alpha21"
+activity-compose = "1.13.0"
+compose = "1.12.1"
+compose-material3 = "1.4.0"
+ktor = "3.6.0"
+kotlin = "2.4.20"
+logback = "1.6.5"
+
+[libraries]
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+androidx-compose-remote-core = { module = "androidx.compose.remote:remote-core", version.ref = "androidx-compose-remote" }
+androidx-compose-remote-creation-jvm = { module = "androidx.compose.remote:remote-creation-jvm", version.ref = "androidx-compose-remote" }
+androidx-compose-remote-player-core = { module = "androidx.compose.remote:remote-player-core", version.ref = "androidx-compose-remote" }
+androidx-compose-remote-player-view = { module = "androidx.compose.remote:remote-player-view", version.ref = "androidx-compose-remote" }
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
+ktor-server-cio = { module = "io.ktor:ktor-server-cio", version.ref = "ktor" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinCompose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
